@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.adambennett.ribbit.app" >
+    package="com.adambennett.ribbit.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name="com.adambennett.ribbit.app.RibbitApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:name=".RibbitApplication">
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.adambennett.ribbit.app.MainActivity"
             android:label="@string/app_name"
@@ -24,15 +24,20 @@
         <activity
             android:name="com.adambennett.ribbit.app.LoginActivity"
             android:label="@string/title_activity_login"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.adambennett.ribbit.app.SignUpActivity"
-            android:parentActivityName=".LoginActivity"
+            android:label="@string/title_activity_sign_up"
+            android:parentActivityName="com.adambennett.ribbit.app.LoginActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.adambennett.ribbit.app.EditFriendsActivity"
+            android:label="@string/title_activity_edit_friends"
             android:screenOrientation="portrait"
-            android:label="@string/title_activity_sign_up">
-
+            android:parentActivityName="com.adambennett.ribbit.app.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
         </activity>
     </application>
 

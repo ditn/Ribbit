@@ -7,4 +7,8 @@
         android:title="@string/menu_logout_label"
         android:orderInCategory="100"
         android:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_edit_friends"
+        android:title="@string/edit_friends_label" />
 </menu>
