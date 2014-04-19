@@ -3,10 +3,7 @@ package com.adambennett.ribbit.app;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -64,12 +61,14 @@ public class EditFriendsActivity extends ListActivity {
                     }
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(EditFriendsActivity.this, android.R.layout.simple_list_item_checked, usernames);
                     setListAdapter(adapter);
+
+                    addFriendCheckmarks();
                 } else {
                     //error
                     Log.e(TAG, e.getMessage());
                     AlertDialog.Builder builder = new AlertDialog.Builder(EditFriendsActivity.this);
                     builder.setMessage(e.getMessage());
-                    builder.setTitle(R.string.edit_friends_error_title);
+                    builder.setTitle(R.string.ERROR_TITLE);
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }
@@ -77,25 +76,27 @@ public class EditFriendsActivity extends ListActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    private void addFriendCheckmarks() {
 
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.edit_friends, menu);
-        return true;
-    }
+        mFriendsRelation.getQuery().findInBackground(new FindCallback<ParseUser>() {
+            @Override
+            public void done(List<ParseUser> friends, ParseException e) {
+                if (e == null) {
+                    //success, list returned, look for match
+                    for (int i = 0; i < mUsers.size(); i++) {
+                        ParseUser user = mUsers.get(i);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+                        for (ParseUser friend : friends) {
+                            if (friend.getObjectId().equals(user.getObjectId())) {
+                                getListView().setItemChecked(i, true);
+                            }
+                        }
+                    }
+                } else {
+                    Log.e(TAG, e.getMessage());
+                }
+            }
+        });
     }
 
     @Override
@@ -105,17 +106,19 @@ public class EditFriendsActivity extends ListActivity {
         if (getListView().isItemChecked(position)) {
             //add friend
             mFriendsRelation.add(mUsers.get(position));
-            mCurrentUser.saveInBackground(new SaveCallback() {
-                @Override
-                public void done(ParseException e) {
-                    if (e == null) {
-                        Log.e(TAG, e.getMessage());
-                    }
-                }
-            });
+
         } else {
             //remove friend
-        }
+            mFriendsRelation.remove(mUsers.get(position));
 
+        }
+        mCurrentUser.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, e.getMessage());
+                }
+            }
+        });
     }
 }
