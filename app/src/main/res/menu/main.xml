@@ -3,6 +3,12 @@
     tools:context="com.adambennett.ribbit.app.MainActivity">
 
     <item
+        android:id="@+id/action_camera"
+        android:title="@string/menu_camera_label"
+        android:icon="@drawable/ic_action_camera"
+        android:showAsAction="always" />
+
+    <item
         android:id="@+id/action_logout"
         android:title="@string/menu_logout_label"
         android:orderInCategory="100"
