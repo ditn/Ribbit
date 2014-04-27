@@ -10,7 +10,6 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
-
     <application
         android:name="com.adambennett.ribbit.app.RibbitApplication"
         android:allowBackup="true"
@@ -30,15 +29,24 @@
         <activity
             android:name="com.adambennett.ribbit.app.LoginActivity"
             android:label="@string/title_activity_login"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.adambennett.ribbit.app.SignUpActivity"
             android:label="@string/title_activity_sign_up"
             android:parentActivityName="com.adambennett.ribbit.app.LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.adambennett.ribbit.app.EditFriendsActivity"
             android:label="@string/title_activity_edit_friends"
+            android:parentActivityName="com.adambennett.ribbit.app.MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
+        <activity
+            android:name="com.adambennett.ribbit.app.RecipientsActivity"
+            android:label="@string/title_activity_recipients"
             android:screenOrientation="portrait"
             android:parentActivityName="com.adambennett.ribbit.app.MainActivity">
             <meta-data
