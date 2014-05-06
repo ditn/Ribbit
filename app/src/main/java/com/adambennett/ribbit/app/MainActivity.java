@@ -190,7 +190,8 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
             actionBar.addTab(
                     actionBar.newTab()
                             .setText(mSectionsPagerAdapter.getPageTitle(i))
-                            .setTabListener(this));
+                            .setTabListener(this)
+            );
         }
     }
 
@@ -270,7 +271,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
@@ -284,12 +285,12 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
         int id = item.getItemId();
         switch (id) {
             case R.id.action_logout:
-            ParseUser.logOut();
-            navigateToLogin();
+                ParseUser.logOut();
+                navigateToLogin();
 
             case R.id.action_edit_friends:
-            Intent intent = new Intent(this, EditFriendsActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(this, EditFriendsActivity.class);
+                startActivity(intent);
 
             case R.id.action_camera:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -314,9 +315,6 @@ public class MainActivity extends Activity implements ActionBar.TabListener {
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     }
-
-
-
 
 
 }
