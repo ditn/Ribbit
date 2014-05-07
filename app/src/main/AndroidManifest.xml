@@ -47,8 +47,17 @@
         <activity
             android:name="com.adambennett.ribbit.app.RecipientsActivity"
             android:label="@string/title_activity_recipients"
-            android:screenOrientation="portrait"
-            android:parentActivityName="com.adambennett.ribbit.app.MainActivity">
+            android:parentActivityName="com.adambennett.ribbit.app.MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
+        <activity
+            android:name="com.adambennett.ribbit.app.ViewImageActivity"
+            android:label="@string/title_activity_view_image"
+            android:parentActivityName="com.adambennett.ribbit.app.MainActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />

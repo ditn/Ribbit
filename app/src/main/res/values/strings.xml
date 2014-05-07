@@ -45,5 +45,6 @@
     <string name="error_sorry">We\'re sorry!</string>
     <string name="success_message">Message sent!</string>
     <string name="error_sending_message">There was an error sending your message. Please try again.</string>
+    <string name="title_activity_view_image">Ribbit</string>
 
 </resources>
