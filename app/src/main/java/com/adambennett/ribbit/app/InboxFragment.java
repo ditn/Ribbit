@@ -15,9 +15,7 @@ import com.parse.ParseUser;
 
 import java.util.List;
 
-/**
- * Created by adambennett on 16/04/2014.
- */
+
 public class InboxFragment extends ListFragment {
 
     protected List<ParseObject> mMessages;
