@@ -11,7 +11,8 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        style="@style/AuthTitle" />
+        style="@style/AuthTitle"
+        android:layout_marginTop="180dp" />
 
     <TextView
         android:id="@+id/tvSubtitle"
@@ -20,7 +21,9 @@
 
     <LinearLayout
         android:id="@+id/editTextLayout"
-        style="@style/AuthFieldContainer">
+        style="@style/AuthFieldContainer"
+        android:layout_width="400dp"
+        android:layout_centerHorizontal="true">
 
         <EditText
             android:id="@+id/etUsernameField"
@@ -55,8 +58,9 @@
         android:id="@+id/bSignUp"
         style="@style/AuthButton"
         android:layout_width="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignLeft="@id/editTextLayout"
         android:layout_below="@id/editTextLayout"
+        android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_toLeftOf="@+id/buttonDivider"
         android:text="@string/sign_up_text" />
@@ -65,9 +69,10 @@
         android:id="@+id/bCancel"
         style="@style/AuthButton"
         android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
+        android:layout_alignRight="@id/editTextLayout"
         android:layout_below="@id/editTextLayout"
         android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
         android:layout_toRightOf="@+id/buttonDivider"
         android:text="@string/cancel_button_label" />
 

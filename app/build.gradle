@@ -5,7 +5,7 @@ android {
     buildToolsVersion "19.0.3"
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 19
         versionCode 1
         versionName "1.0"
@@ -25,4 +25,5 @@ dependencies {
     compile files('libs/picasso-2.1.1.jar')
     compile 'com.android.support:support-v13:19.+'
     compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.github.dmytrodanylyk.android-process-buton:library:0.0.3'
 }

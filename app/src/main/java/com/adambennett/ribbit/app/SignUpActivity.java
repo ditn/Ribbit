@@ -18,7 +18,7 @@ import com.parse.SignUpCallback;
 public class SignUpActivity extends Activity {
 
     protected EditText mUsername, mPassword, mEmail;
-    protected Button mSignUpButton;
+    protected Button mSignUpButton, mCancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,15 @@ public class SignUpActivity extends Activity {
         mUsername = (EditText) findViewById(R.id.etUsernameField);
         mPassword = (EditText) findViewById(R.id.etPasswordField);
         mEmail = (EditText) findViewById(R.id.etEmailField);
+
+        mCancelButton = (Button) findViewById(R.id.bCancel);
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         mSignUpButton = (Button) findViewById(R.id.bSignUp);
         mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override

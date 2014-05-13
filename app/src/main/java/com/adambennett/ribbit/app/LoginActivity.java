@@ -7,10 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.dd.processbutton.iml.ActionProcessButton;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -20,7 +20,7 @@ public class LoginActivity extends Activity {
 
     protected TextView mSignUpTextView;
     protected EditText mUsername, mPassword;
-    protected Button mLoginButton;
+    protected ActionProcessButton mLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class LoginActivity extends Activity {
 
         mUsername = (EditText) findViewById(R.id.etUsernameField);
         mPassword = (EditText) findViewById(R.id.etPasswordField);
-        mLoginButton = (Button) findViewById(R.id.bLogin);
+        mLoginButton = (ActionProcessButton) findViewById(R.id.bLogin);
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,11 +63,14 @@ public class LoginActivity extends Activity {
                     dialog.show();
                 } else {
                     //Login!
-                    setProgressBarIndeterminateVisibility(true);
+                    mLoginButton.setMode(ActionProcessButton.Mode.ENDLESS);
+                    mLoginButton.setProgress(1);
+                    //setProgressBarIndeterminateVisibility(true);
                     ParseUser.logInInBackground(username, password, new LogInCallback() {
                         @Override
                         public void done(ParseUser user, ParseException e) {
-                            setProgressBarIndeterminateVisibility(false);
+                            mLoginButton.setProgress(0);
+                            //setProgressBarIndeterminateVisibility(false);
                             if (e == null) {
                                 //Success!
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);

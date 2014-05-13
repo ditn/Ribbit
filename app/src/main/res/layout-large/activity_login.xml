@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     style="@style/AuthBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +12,8 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        style="@style/AuthTitle" />
+        style="@style/AuthTitle"
+        android:layout_marginTop="180dp" />
 
     <TextView
         android:id="@+id/tvSubtitle"
@@ -20,7 +21,9 @@
 
     <LinearLayout
         android:id="@+id/editTextLayout"
-        style="@style/AuthFieldContainer">
+        style="@style/AuthFieldContainer"
+        android:layout_width="400dp"
+        android:layout_centerHorizontal="true">
 
         <EditText
             android:id="@+id/etUsernameField"
@@ -32,27 +35,27 @@
         <EditText
             android:id="@+id/etPasswordField"
             style="@style/AuthEditText"
-            android:hint="@string/password_hint"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:hint="@string/password_hint" />
 
 
     </LinearLayout>
 
     <com.dd.processbutton.iml.ActionProcessButton
         android:id="@+id/bLogin"
-        style="@style/AuthButton"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editTextLayout"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_custom"
         android:text="@string/login_button_label"
+        style="@style/AuthButton"
+        android:layout_below="@+id/editTextLayout"
+        android:layout_width="400dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_custom"
+        android:layout_marginBottom="16dp"
         custom:colorComplete="@color/green_complete"
         custom:colorNormal="@color/light_purple_button"
         custom:colorPressed="@color/pressed_purple_button"
         custom:colorProgress="@color/purple_progress"
         custom:completeText="@string/success"
         custom:progressText="@string/loading" />
-
 
     <TextView
         android:id="@+id/tvSignUpText"
