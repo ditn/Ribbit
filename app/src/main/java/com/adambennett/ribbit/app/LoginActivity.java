@@ -1,5 +1,6 @@
 package com.adambennett.ribbit.app;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -27,6 +28,11 @@ public class LoginActivity extends Activity {
         //must be called before setContentView
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_login);
+
+        // Hide the actionbar, after call to setContentView
+        ActionBar actionBar = getActionBar();
+        actionBar.hide();
+
         mSignUpTextView = (TextView) findViewById(R.id.tvSignUpText);
         mSignUpTextView.setOnClickListener(new View.OnClickListener() {
             @Override
