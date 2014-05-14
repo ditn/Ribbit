@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.adambennett.ribbit.app.RecipientsActivity">
+    tools:context="com.adambennett.ribbit.app.ui.RecipientsActivity">
 
     <item
         android:id="@+id/action_send"
@@ -8,6 +8,6 @@
         android:orderInCategory="100"
         android:showAsAction="always"
         android:visible="false"
-        android:icon="@android:drawable/ic_menu_send" />
+        android:icon="@drawable/ic_menu_send" />
 
 </menu>

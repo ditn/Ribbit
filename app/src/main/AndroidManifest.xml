@@ -15,9 +15,9 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.Ribbit">
         <activity
-            android:name="com.adambennett.ribbit.app.MainActivity"
+            android:name=".ui.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -27,36 +27,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.adambennett.ribbit.app.LoginActivity"
+            android:name=".ui.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.adambennett.ribbit.app.SignUpActivity"
+            android:name=".ui.SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:parentActivityName="com.adambennett.ribbit.app.LoginActivity"
+            android:parentActivityName=".ui.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.adambennett.ribbit.app.EditFriendsActivity"
+            android:name=".ui.EditFriendsActivity"
             android:label="@string/title_activity_edit_friends"
-            android:parentActivityName="com.adambennett.ribbit.app.MainActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />
         </activity>
         <activity
-            android:name="com.adambennett.ribbit.app.RecipientsActivity"
+            android:name=".ui.RecipientsActivity"
             android:label="@string/title_activity_recipients"
-            android:parentActivityName="com.adambennett.ribbit.app.MainActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />
         </activity>
         <activity
-            android:name="com.adambennett.ribbit.app.ViewImageActivity"
+            android:name=".ui.ViewImageActivity"
             android:label="@string/title_activity_view_image"
-            android:parentActivityName="com.adambennett.ribbit.app.MainActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

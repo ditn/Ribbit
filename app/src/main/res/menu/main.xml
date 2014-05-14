@@ -1,11 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.adambennett.ribbit.app.MainActivity">
+    tools:context="com.adambennett.ribbit.app.ui.MainActivity">
 
     <item
         android:id="@+id/action_camera"
         android:title="@string/menu_camera_label"
-        android:icon="@android:drawable/ic_menu_camera"
+        android:icon="@drawable/ic_menu_camera"
         android:showAsAction="always" />
 
     <item
