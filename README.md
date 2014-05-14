@@ -3,4 +3,4 @@ Ribbit
 
 ![Ribbit](http://i.imgur.com/VKFWctZ.png)
 
-Teamtreehouse example app - a Snapchat-style self destructing message app with a Parse.com backend
+A Teamtreehouse example app - a Snapchat-style self destructing message app with a Parse.com backend.
