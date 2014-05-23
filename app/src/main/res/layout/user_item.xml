@@ -7,14 +7,15 @@
     android:orientation="vertical">
 
     <ImageView
+        style="@style/GridImage"
         android:id="@+id/userImageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
         android:src="@drawable/avatar_empty" />
+
+    <ImageView
+        style="@style/GridImage"
+        android:id="@+id/checkImageView"
+        android:src="@drawable/avatar_selected"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/nameLabel"

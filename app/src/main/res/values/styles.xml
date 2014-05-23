@@ -19,6 +19,15 @@
 
     </style>
 
+    <style name="GridImage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
     <style name="Theme.Ribbit.LightPurpleBackground">
         <item name="android:background">@color/light_purple_background</item>
         <item name="android:divider">@null</item>
