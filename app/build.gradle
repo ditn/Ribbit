@@ -26,4 +26,5 @@ dependencies {
     compile 'com.android.support:support-v13:19.+'
     compile 'com.android.support:appcompat-v7:19.+'
     compile 'com.github.dmytrodanylyk.android-process-buton:library:0.0.3'
+    compile files('libs/Parse-1.5.0.jar')
 }

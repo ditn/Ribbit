@@ -52,5 +52,6 @@
     <string name="description_button_divider">Button Divider</string>
     <string name="success">Success</string>
     <string name="loading">Loading...</string>
+    <string name="push_message">You have a new Ribbit message from %s!</string>
 
 </resources>

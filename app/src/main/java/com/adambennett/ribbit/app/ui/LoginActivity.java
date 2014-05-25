@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.adambennett.ribbit.app.R;
+import com.adambennett.ribbit.app.RibbitApplication;
 import com.dd.processbutton.iml.ActionProcessButton;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -78,6 +79,8 @@ public class LoginActivity extends Activity {
                             mLoginButton.setProgress(0);
                             if (e == null) {
                                 //Success!
+                                RibbitApplication.updateParseInstallation(user);
+
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
